@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f766e" />
+
+    <title>Epoch &amp; Unix Timestamp Converter — seconds, ms, µs, ns to date</title>
+    <meta
+      name="description"
+      content="Convert a Unix timestamp to a human-readable date and back. Auto-detects seconds, milliseconds, microseconds and nanoseconds, shows local and UTC time, ISO 8601, RFC 2822 and relative time. Runs entirely in your browser."
+    />
+    <link rel="canonical" href="https://epoch-converter.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Epoch & Unix Timestamp Converter" />
+    <meta property="og:description" content="Unix timestamp to date and back — seconds, ms, µs, ns, local and UTC, ISO 8601. Client-side." />
+    <meta property="og:url" content="https://epoch-converter.correia95.workers.dev/" />
+    <meta property="og:image" content="https://epoch-converter.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Epoch & Unix Timestamp Converter" />
+    <meta name="twitter:description" content="Unix timestamp to date and back — seconds, ms, µs, ns, local and UTC." />
+    <meta name="twitter:image" content="https://epoch-converter.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Epoch & Unix Timestamp Converter",
+        "url": "https://epoch-converter.correia95.workers.dev/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Convert Unix timestamps to dates and back, in seconds, milliseconds, microseconds or nanoseconds, entirely client-side."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Unix timestamp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is the number of seconds since 00:00:00 UTC on 1 January 1970, ignoring leap seconds. Because it is a single number in UTC, it represents an instant in time regardless of timezone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know if a timestamp is in seconds or milliseconds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By length. For dates around now, a seconds timestamp has 10 digits, milliseconds 13, microseconds 16 and nanoseconds 19. This converter picks the unit from the digit count and lets you override it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the year 2038 problem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Systems that store the timestamp as a signed 32-bit integer overflow at 2147483647 seconds, which is 03:14:07 UTC on 19 January 2038. Systems using 64-bit integers are not affected."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this converter send my data anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All conversion happens in your browser. The value you enter is only placed in the page URL so you can bookmark or share a specific instant."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This Unix timestamp converter needs JavaScript. It converts epoch time (seconds,
+        milliseconds, microseconds, nanoseconds) to local and UTC dates and back, with ISO 8601 and
+        relative time.
+      </p>
+    </noscript>
+  </body>
+</html>
